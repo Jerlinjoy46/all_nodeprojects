@@ -1,0 +1,41 @@
+{{!-- <h1 class="text-center text-primary">ADMIN LOGIN</h1> 
+<form action="/login" method="POST" class="mb-4">
+<div class="form-group">
+<label>ADMINNAME</label>
+<input type="text" name="uname" placeholder="Enter Username" class="form-control"> 
+</div>
+<div class="form-group">
+<label>PASSWORD</label>
+<input type="password" name="psw" placeholder="Enter Password" class="form-control"> 
+</div>
+<label></label>
+<input type="submit" value="LOGIN" class="btn btn-primary btn-block">
+</form> --}}
+
+
+<script>
+   function preback(){window.history.forward();}
+   setTimeout("preback()",0);
+   window.onunload=function(){null};
+ </script> 
+
+
+
+ <div class="container d-flex justify-content-center p-5 mt-5">
+<div class="row">
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header d-flex justify-content-center" >ADMIN LOGIN</div>
+  <div class="card-body text-dark">
+   <form action="/login" method="POST" class="mb-4" autocomplete="off"> 
+    <label for="username" >UserName</label>
+    <input type="text" placeholder="UserName" id="xyz" name="uname" required class="form-control">
+    <label for="password" >Password</label>
+    <input type="password" id="password" name="psw" required class="form-control" placeholder="Password">
+    <label></label>
+    <input type="submit" value="LOGIN" class="btn btn-success btn-block"> 
+</form>
+  </div>
+</div>
+</div>
+
+</div>

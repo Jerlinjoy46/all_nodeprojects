@@ -1,0 +1,51 @@
+<script>
+    function validateform(){  
+var name=document.myform.username.value;  
+var password=document.myform.password.value;  
+  var phone=document.myform.phone.value;
+if (username==null || username==""){  
+  alert("Name can't be blank");  
+  return false;  
+}else if(password.length < 6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  else if(phone.length < 10) {
+    alert("Phone Number must have 10 digit");
+    return false;  
+  }
+
+}
+
+function preback(){window.history.forward();}
+   setTimeout("preback()",0);
+   window.onunload=function(){null}
+
+</script> 
+
+<div class="container d-flex justify-content-center p-5 mt-5">
+<div class="row">
+<div class=" mb-3" style="max-width: 18rem;">
+  <div class=" d-flex justify-content-center">SIGNUP</div>
+  <div class="card-body text-dark">
+  <form action="/register" method="POST" onsubmit="return validateform()" name="myform" class="mb-4" autocomplete="off">
+    <label for="username" >UserName</label>
+    <input type="text" id="username" name="username" required class="form-control" placeholder="UserName">
+    <label for="password" >Password</label>
+    <input type="password" id="password" name="password" required class="form-control" placeholder="Password" maxlength="6">
+    <label for="phone" > Mobile No</label>
+    <input type="number" name="phone" id="phone" required class="form-control" placeholder="Mobile No" maxlength="10" minlength="10">
+    <label for="city" > Email</label>
+    <input type="email" name="email" id="email" required class="form-control" placeholder="Email">
+    <label for="city" >Pin code</label>
+    <input type="number" name="pin" id="pin" required class="form-control" placeholder="Pin" maxlength="6" minlength="6"><br><br>
+   <label></label>
+    <input type="submit" value="SIGNUP" class="btn btn-success">
+    <label></label>
+    <a href="/login"> <input type="button" value="HOME" class="btn btn-info ml-5"></a>
+    
+</form>
+  </div>
+</div>
+</div>
+
+</div>

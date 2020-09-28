@@ -1,0 +1,38 @@
+  <script>
+   function preback(){window.history.forward();}
+   setTimeout("preback()",0);
+   window.onunload=function(){null};
+ </script> 
+
+
+ <div class="card p-5 mt-5">
+  <div class="card-body">
+    <h3 class="card-title">ADMIN DASHBOARD</h3>
+<a href="/adminlogout"> <input type="button" value="LOGOUT" class="btn btn-primary mr-auto"></a>
+  <table> 
+      <thead>
+          <tr>
+              <th>Username</th>
+              <th>Mobile No</th>
+              <th>City</th> 
+              {{!-- <th></th> --}}
+          </tr>
+      </thead>
+      <tbody>
+         {{!-- {{#each users}}  --}}
+          {{#each adminprofiles}} 
+         <tr>
+             <td>{{this.username}}</td>
+              <td>{{this.phone}}</td>
+               <td>{{this.city}}</td> 
+               {{!-- <td></td> --}}
+         </tr>
+         {{/each}}
+      </tbody>
+
+  </table>
+    <p class="card-text"></p>
+ 
+  
+  </div>
+</div>

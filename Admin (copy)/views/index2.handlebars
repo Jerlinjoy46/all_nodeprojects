@@ -1,0 +1,82 @@
+{{!-- <h1 class="text-center text-primary">WELCOME</h1> 
+<p>NEEE THEERNNADAA THEERNNU.........</p>
+<form action="/logout" method="POST" class="mb-4">
+<input type="submit" value="LOGOUT" class="btn btn-primary btn-block">
+</form> --}}
+<script>
+   function preback(){window.history.forward();}
+   setTimeout("preback()",0);
+   window.onunload=function(){null};
+ </script> 
+
+
+  <div class="card p-5 mt-5">
+  <div class="card-body">
+    <h3 class="card-title">ADMIN DASHBOARD</h3> 
+    <label></label>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search" >
+    <br><br>    
+    <table id="myTable" border="1"> 
+      <thead>
+          <tr>
+              <th>Username</th>
+              <th>Mobile No</th>
+              <th>City</th> 
+              <th>Edit</th>
+              <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+         {{!-- {{#each users}}  --}}
+          {{#each users}} 
+         <tr>
+             <td>{{this.username}}</td>
+              <td>{{this.phone}}</td>
+               <td>{{this.city}}</td> 
+               <td> 
+                    <a href="/update/{{this._id}}">
+                  <button class="btn" style='font-size:24px;color:green'><i class='fas fa-pencil-alt'></i></button>
+                     </a>
+               </td>
+               <td> 
+                   <a href="/delete/{{this._id}}">
+                   <button class="btn" style="font-size:24px;color:red" onClick="return confirm('Are you sure you want to delete...?')"><i class="fa fa-trash-o"></i></button>
+                  </a>
+                   </td>
+         </tr>
+         {{/each}}
+      </tbody>
+
+  </table>
+   <label></label>
+ <form action="/logout" method="POST" class="mb-4">
+<input type="submit" value="LOGOUT" class="btn btn-primary">
+</form> 
+  </div>
+</div> 
+
+
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>

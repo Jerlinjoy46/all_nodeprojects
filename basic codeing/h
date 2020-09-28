@@ -1,0 +1,85 @@
+Area.java
+package Area;
+
+import java.util.Scanner;
+
+public class Area {
+	
+	public static void main( final String[] args )
+	{
+		
+		final Scanner sc = new Scanner (System.in);
+		
+		AreaCalc a = new AreaCalc();
+		
+		System.out.println("Select your Choice : ");
+
+        System.out.println("\n1 > AreaofCircle\n2 > AreaofRectangle\n3 > AreaofTriangle\n4 > Areaofsquare ");
+        final int choice=sc.nextInt();
+		
+		
+        
+        
+        if(choice==1){
+        	System.out.println("Enter the radius of circle");
+    		double radius = sc.nextDouble();
+    		
+    		
+    		double areaofcircle = a.AreaofCircle(radius);
+    		System.out.println("The area of circle is :" + areaofcircle);
+    		
+        }else if(choice==2){
+        	System.out.println("Enter the length of Rectangle");
+    		double length = sc.nextDouble();
+    		System.out.println("Enter the width of Rectangle");
+    		double width = sc.nextDouble();
+    		
+    		double areaofrectangle = a.AreaofRectangle(length, width);
+    		System.out.println("The area of Rectangle is :" + areaofrectangle);
+
+        }else if(choice==3){
+        	System.out.println("Enter the basewidth of Triangle");
+    		double basewidth = sc.nextDouble();
+    		System.out.println("Enter the heigth of Triangle");
+    		double heigth = sc.nextDouble();
+    		
+    		double areaoftriangle = a.AreaofTriangle(basewidth, heigth);
+    		System.out.println("The area of Triangle is :" + areaoftriangle);
+    		
+        }else if(choice==4){
+        	System.out.println("Enter the side of Square");
+    		double side = sc.nextDouble();
+    		
+    		double areaofsquare = a.AreaofSquare(side);
+    		System.out.println("The area of sqaure is :" + areaofsquare);
+        }else{
+            System.out.println("Invalid choice!!!");
+        }
+  
+	
+	}
+
+}
+
+AreaCal.java
+package Area;
+import java.util.*;
+
+public class AreaCalc {
+	public static double AreaofCircle(double radius)
+	{
+		return 3.14*radius*radius;
+	}
+	public static double AreaofRectangle(double length, double width)
+	{
+		return length * width;
+	}
+	public static double AreaofTriangle(double basewidth, double heigth)
+	{
+		return (basewidth * heigth)/2;
+	}
+	public static double AreaofSquare(double side)
+	{
+		return side * side;
+	}
+}
